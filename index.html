@@ -5,9 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
     <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
     <title>Document</title>
 </head>
 <body>
+    <h3>Instructions:</h3>
+    <ul>
+        <li>
+            Add this chrome addon <a href="https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf" target="_blank">link</a>
+        </li>
+        <li>Enable cors by pressing the C</li>
+        <li>Click the button below</li>
+        <li>You might have to disable adblocker and enable popups from site if it doesn't open a billion tabs</li>
+        <li>Disable cors by pressing C (it breaks most sites)</li>
+    </ul>
+
     <button onclick="openStuff()">Open items in tabs</button>
+    <table style="border: 2px solid;">
+        <th>
+            <tr>
+                <td>Item</td>
+                <td>Count</td>
+            </tr>
+        </th>
+        <tbody id="content">
+
+        </tbody>
+    </table>
 </body>
 </html>

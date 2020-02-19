@@ -7,6 +7,8 @@ function openStuff() {
         crossdomain: true
       })
       .then(function (response) {
+        document.getElementById("content").innerHTML=""
+
         const lines = response.data.split('\n')
         table = lines.map(line => line.split(','))
     
@@ -17,6 +19,21 @@ function openStuff() {
             const offsetItem = parseInt(row[6])
             if(offsetItem < 0) {
                 window.open(row[3], '_blank')
+                                
+                tr = document.createElement("tr");
+
+                tdItem = document.createElement("td");
+                tdItemText = document.createTextNode(row[1]);
+                tdItem.appendChild(tdItemText);
+                tr.appendChild(tdItem);
+
+                tdCount = document.createElement("td");
+                tdCountText = document.createTextNode(Math.abs(row[6]));
+                tdCount.appendChild(tdCountText);
+                tr.appendChild(tdCount);
+
+                const tableBody = document.getElementById("content")
+                tableBody.appendChild(tr);
             }
         })
       })
